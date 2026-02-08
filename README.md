@@ -41,3 +41,18 @@ This project is ready to be hosted on **GitHub Pages**, **Vercel**, or **Netlify
 2. Go to **Settings** > **Pages**.
 3. Select the `main` branch as the source and save.
 4. Your specific URL will be generated!
+
+## 🔄 How to Update Your Portfolio
+
+If you make any changes to the code (like adding a new project or changing colors), follow these steps to update your live site:
+
+1.  **Save your changes** in VS Code.
+2.  Open the terminal in VS Code (Ctrl+`).
+3.  Run these 3 commands one by one:
+    ```bash
+    git add .
+    git commit -m "Updated portfolio content"
+    git push
+    ```
+4.  Wait 1-2 minutes for GitHub Pages to refresh.
+

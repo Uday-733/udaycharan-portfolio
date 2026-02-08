@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <meta name="description"
+        content="A professional personal portfolio website showcasing my skills in Frontend Development, Python, and Design. Built with Tailwind CSS and interactive animations.">
+
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configure Tailwind CSS Theme Customizations -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue
+                            600: '#0284c7',
+                            900: '#0c4a6e', // Deep Space Blue
+                        },
+                        accent: '#8b5cf6', // Violet
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                        'spin-reverse-slow': 'spin 10s linear infinite reverse',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Link to Custom CSS for Animations and Overrides -->
+    <link rel="stylesheet" href="portfolie.css">
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+
+    <!-- Main Navigation Header (Fixed to Top) -->
+    <header class="fixed w-full top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+            <h1
+                class="text-2xl font-bold bg-gradient-to-r from-brand-500 to-accent bg-clip-text text-transparent cursor-pointer">
+                Portfolio
+            </h1>
+
+            <!-- Desktop Menu Links (Hidden on Mobile) -->
+            <ul class="hidden md:flex space-x-8 text-slate-300 font-medium">
+                <li><a href="#about" class="hover:text-brand-500 transition-colors">About</a></li>
+                <li><a href="#skills" class="hover:text-brand-500 transition-colors">Skills</a></li>
+                <li><a href="#projects" class="hover:text-brand-500 transition-colors">Projects</a></li>
+                <li><a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a></li>
+            </ul>
+
+            <button id="mobile-menu-btn"
+                class="md:hidden text-slate-300 focus:outline-none hover:text-brand-500 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-slate-900 border-b border-slate-700 absolute w-full left-0 top-16 shadow-xl">
+            <ul class="flex flex-col p-4 space-y-4 text-center text-slate-300 font-medium">
+                <li><a href="#about" class="block hover:text-brand-500 transition-colors py-2">About</a></li>
+                <li><a href="#skills" class="block hover:text-brand-500 transition-colors py-2">Skills</a></li>
+                <li><a href="#projects" class="block hover:text-brand-500 transition-colors py-2">Projects</a></li>
+                <li><a href="#contact" class="block hover:text-brand-500 transition-colors py-2">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- Hero Section: Introduction and Call to Action -->
+        <section id="hero" class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 text-center max-w-7xl">
+            <h2 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-float tracking-tight">
+                Uday <span class="text-brand-500">Charan</span>
+            </h2>
+            <p class="text-lg sm:text-xl md:text-2xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Crafting digital experiences where logic meets creativity.
+            </p>
+            <a href="#projects"
+                class="inline-block px-8 py-4 bg-brand-600 hover:bg-brand-500 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg shadow-brand-500/30 ring-2 ring-brand-500/50 ring-offset-2 ring-offset-slate-900">
+                Explore Work
+            </a>
+        </section>
+
+        <!-- About Me Section: Personal Info and Image -->
+        <section id="about" class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 relative max-w-7xl">
+            <!-- Background Decorative Element -->
+            <div
+                class="hidden lg:block absolute -left-10 top-20 w-72 h-72 bg-brand-500/20 rounded-full blur-3xl -z-10 animate-pulse">
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 reveal">
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center animate-float">
+                        <div
+                            class="absolute inset-0 rounded-full border border-brand-500/30 border-t-brand-500 border-b-accent animate-spin-slow">
+                        </div>
+                        <div
+                            class="absolute inset-4 rounded-full border border-accent/30 border-r-accent border-l-brand-500 animate-spin-reverse-slow">
+                        </div>
+                        <div
+                            class="absolute inset-8 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl shadow-brand-500/20 group">
+                            <img src="https://res.cloudinary.com/ddl0884al/image/upload/v1770533720/ai.pic_pxaga8.jpg"
+                                alt="Profile"
+                                class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 relative">
+                    <div
+                        class="bg-slate-800/40 backdrop-blur-lg border border-slate-700/50 p-6 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden group hover:border-brand-500/50 transition-colors duration-300">
+                        <div
+                            class="absolute -right-10 -top-10 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl group-hover:bg-brand-500/20 transition-all">
+                        </div>
+
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 flex items-center gap-3">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-accent">About
+                                Me</span>
+                        </h2>
+
+                        <p class="text-slate-300 text-lg mb-6 leading-relaxed font-light">
+                            I'm not just writing code; I'm <span class="text-white font-semibold">architecting
+                                ideas</span>.
+                            Currently navigating the <span class="text-brand-400">10-Day Portfolio Challenge</span>,
+                            I'm transforming from a learner to a creator.
+                        </p>
+
+                        <p class="text-slate-400 mb-8 font-light">
+                            "Simplicity is the soul of efficiency."
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-brand-500/10 text-brand-400 rounded-full text-sm border border-brand-500/20">Frontend</span>
+                            <span
+                                class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm border border-accent/20">Design</span>
+                            <span
+                                class="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm border border-blue-500/20">Innovation</span>
+                        </div>
+
+                        <div class="mt-8">
+                            <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy9lNDM2ZWZkMmI1YmRmZmFjL0lRQ3hiRE9rZTFhWFNMbHJ1OW5HTW5kWkFXYmh5MURQWlVVWldnbUZ0TG44dDRZP2U9V0pvZWlH&cid=E436EFD2B5BDFFAC&id=E436EFD2B5BDFFAC%21sa4336cb1567b4897b96bbbd9c6327759&parId=E436EFD2B5BDFFAC%21s18975189743043479ca47c179f133f14&o=OneUp"
+                                target="_blank"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 hover:border-brand-500 rounded-full transition-all group-hover:shadow-[0_0_20px_rgba(14,165,233,0.3)]">
+                                <svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                                <span>Download CV</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section: Technical Expertise Grid -->
+        <section id="skills" class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-slate-900/50 max-w-7xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="text-brand-500">02.</span> My Skills
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 reveal">
+                <div
+                    class="p-6 bg-slate-800 rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-700 hover:border-brand-500 group">
+                    <div
+                        class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-colors">
+                        <svg class="w-8 h-8 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">HTML5</h3>
+                    <p class="text-slate-400 text-sm">Semantic Markup</p>
+                </div>
+
+                <div
+                    class="p-6 bg-slate-800 rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-700 hover:border-blue-500 group">
+                    <div
+                        class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
+                        <svg class="w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">CSS3</h3>
+                    <p class="text-slate-400 text-sm">Flexbox & Grid</p>
+                </div>
+
+                <div
+                    class="p-6 bg-slate-800 rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-700 hover:border-yellow-400 group">
+                    <div
+                        class="w-12 h-12 bg-yellow-400/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-400/20 transition-colors">
+                        <svg class="w-8 h-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">JavaScript</h3>
+                    <p class="text-slate-400 text-sm">Interactive Logic</p>
+                </div>
+
+                <div
+                    class="p-6 bg-slate-800 rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-700 hover:border-cyan-400 group">
+                    <div
+                        class="w-12 h-12 bg-cyan-400/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-400/20 transition-colors">
+                        <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Tailwind</h3>
+                    <p class="text-slate-400 text-sm">Rapid Styling</p>
+                </div>
+
+                <div
+                    class="p-6 bg-slate-800 rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-700 hover:border-green-400 group">
+                    <div
+                        class="w-12 h-12 bg-green-400/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-400/20 transition-colors">
+                        <svg class="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Python</h3>
+                    <p class="text-slate-400 text-sm">Backend & Scripts</p>
+                </div>
+
+                <div
+                    class="p-6 bg-slate-800 rounded-xl hover:-translate-y-2 transition-transform duration-300 border border-slate-700 hover:border-purple-400 group">
+                    <div
+                        class="w-12 h-12 bg-purple-400/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-400/20 transition-colors">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">SQL</h3>
+                    <p class="text-slate-400 text-sm">Database Mgmt</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Included Projects Display Section -->
+        <section id="projects" class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 max-w-7xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span class="text-brand-500">03.</span> Featured Projects
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 reveal">
+                <div
+                    class="group relative bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-brand-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-brand-500/20 hover:-translate-y-2">
+                    <div
+                        class="h-48 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-brand-500/10 group-hover:bg-brand-500/20 transition-all"></div>
+                        <svg class="w-16 h-16 text-brand-400 group-hover:scale-110 transition-transform duration-500"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-slate-100 group-hover:text-brand-400 transition-colors">
+                            Student Management System</h3>
+                        <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                            A comprehensive system optimized for educational institutions. streamline student records,
+                            track attendance, and visualize performance analytics with an intuitive dashboard.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="text-xs px-2 py-1 rounded-md bg-slate-700 text-brand-300 border border-slate-600">Python</span>
+                            <span
+                                class="text-xs px-2 py-1 rounded-md bg-slate-700 text-brand-300 border border-slate-600">Streamlit</span>
+                            <span
+                                class="text-xs px-2 py-1 rounded-md bg-slate-700 text-brand-300 border border-slate-600">Pandas</span>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <a href="https://studentmanagementsystem-k2xzbtnbcjrw98y3zb2tgy.streamlit.app/"
+                                target="_blank"
+                                class="flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors">
+                                View Live App
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="group relative bg-slate-800/50 rounded-2xl border border-slate-700 border-dashed flex flex-col items-center justify-center p-8 text-center hover:bg-slate-800 transition-colors cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mb-4 text-slate-500 group-hover:text-brand-500 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-400 group-hover:text-slate-200">Add New Project</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section: Form and Social Links -->
+        <section id="contact" class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 relative max-w-7xl">
+            <!-- Animated Background Blobs -->
+            <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl -z-10 animate-pulse">
+            </div>
+            <div
+                class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10 animate-pulse animation-delay-2000">
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+                <span class="text-brand-500">04.</span> Get In Touch
+            </h2>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-slate-100">Let's Connect</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            I'm currently looking for new opportunities and would love to hear from you.
+                            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-slate-300">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-brand-500">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span>udaycharanvipparthi@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-slate-300">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-brand-500">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <span>Georgepeta, Kakinada, Andhra Pradesh</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-8">
+                        <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Follow Me</h4>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/Uday-733/"
+                                class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 transition-all hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/udaycharan-vipparthi-578546293"
+                                class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#0077b5] transition-all hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <a href="https://x.com/Loyal_Uday"
+                                class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-sky-500 transition-all hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700/50 backdrop-blur-sm">
+                    <form onsubmit="event.preventDefault();" class="space-y-6">
+                        <div>
+                            <label class="block text-slate-400 text-sm font-medium mb-2">Name</label>
+                            <input type="text"
+                                class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
+                                placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-sm font-medium mb-2">Email</label>
+                            <input type="email"
+                                class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
+                                placeholder="uday@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-sm font-medium mb-2">Message</label>
+                            <textarea rows="4"
+                                class="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold py-3.5 rounded-lg shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-950 py-8 text-center text-slate-500 border-t border-slate-800">
+        <p>&copy; 2026 Portfolio</p>
+    </footer>
+
+    <!-- Custom Animated Cursor Elements -->
+    <div id="custom-cursor"
+        class="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[9999] mix-blend-difference hidden md:block">
+        <div class="relative w-full h-full">
+            <div
+                class="absolute inset-0 bg-brand-500 rounded-full opacity-50 blur-sm transform scale-50 transition-transform duration-300 ease-out cursor-dot">
+            </div>
+            <div
+                class="absolute inset-0 border-2 border-brand-400 rounded-full transition-all duration-100 ease-out cursor-ring">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript File -->
+    <script src="portfolie.js"></script>
+</body>
+
+</html>
